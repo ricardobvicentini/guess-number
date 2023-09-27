@@ -8,7 +8,7 @@ let score = 20;
 let highscore = 0;
 let count = 0;
 let guess;
-const attempt = [
+/* const attempt = [
   'I.',
   'II.',
   'III.',
@@ -29,7 +29,7 @@ const attempt = [
   'XVIII.',
   'XIX.',
   'XX',
-];
+]; */
 const number = document.querySelector('.number');
 const selectedNums = document.querySelector('.selected');
 const againBtnEl = document.querySelector('.again');
@@ -49,7 +49,6 @@ const removeNumbers = function () {
 checkBtnEl.addEventListener('click', () => {
   guess = Number(document.querySelector('.guess').value);
   count++;
-
   // When there is no input. / Quando nenhum número é inserido.
   if (!guess) {
     document.querySelector('.message').textContent = 'Please select a number!';
@@ -72,7 +71,7 @@ checkBtnEl.addEventListener('click', () => {
   } else if (guess !== secretNumber) {
     // Add number function. / Função adicionar número selecionado.
     const addNumber = function () {
-      selectedNums.innerHTML += `<span>(${count}) ${guess} </span>`;
+      selectedNums.innerHTML += `<span>(${count}).${guess} </span>`;
     };
     addNumber();
     if (score > 1) {
