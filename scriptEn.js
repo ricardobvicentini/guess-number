@@ -8,28 +8,6 @@ let score = 20;
 let highscore = 0;
 let count = 0;
 let guess;
-/* const attempt = [
-  'I.',
-  'II.',
-  'III.',
-  'IV.',
-  'V.',
-  'VI.',
-  'VII.',
-  'VIII.',
-  'IX.',
-  'XI.',
-  'XII.',
-  'XIII.',
-  'XIV.',
-  'XV.',
-  'XVI.',
-  'XVII.',
-  'XVII.',
-  'XVIII.',
-  'XIX.',
-  'XX',
-]; */
 const number = document.querySelector('.number');
 const selectedNums = document.querySelector('.selected');
 const againBtnEl = document.querySelector('.again');
@@ -71,7 +49,11 @@ checkBtnEl.addEventListener('click', () => {
   } else if (guess !== secretNumber) {
     // Add number function. / Função adicionar número selecionado.
     const addNumber = function () {
-      selectedNums.innerHTML += `<span>(${count}).${guess} </span>`;
+      if (count > 15) {
+        selectedNums.innerHTML += `<li style="color: red">${guess} </li>`;
+      } else {
+        selectedNums.innerHTML += `<li>${guess} </li>`;
+      }
     };
     addNumber();
     if (score > 1) {

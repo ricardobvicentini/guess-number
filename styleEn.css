@@ -65,12 +65,30 @@ main {
   margin: 0 auto;
   max-width: 100%;
   height: 10vh;
-  padding: 1rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.selected li {
+  list-style: none;
+}
+
+li::before {
+  content: '⚡';
+  font-size: 2rem;
+}
+
+li:nth-child(16):before,
+li:nth-child(17):before,
+li:nth-child(18):before,
+li:nth-child(19):before,
+li:nth-child(20):before {
+  content: '🔥';
+  font-size: 2rem;
 }
 
 /* ELEMENTS STYLE */
