@@ -30,6 +30,7 @@ checkBtnEl.addEventListener('click', () => {
   // When there is no input. / Quando nenhum número é inserido.
   if (!guess) {
     document.querySelector('.message').textContent = 'Please select a number!';
+    guess = document.querySelector('.guess').value = '';
 
     // When player wins. / Quando o jogador ganha.
   } else if (guess === secretNumber) {
@@ -65,6 +66,8 @@ checkBtnEl.addEventListener('click', () => {
       document.querySelector('.score').textContent = 0;
       document.querySelector('body').style.backgroundImage =
         'linear-gradient(to bottom, #a31521, #e4636e)';
+      guess = document.querySelector('.guess').value = '';
+      score = 20;
     }
   }
   guess = document.querySelector('.guess').value = '';
